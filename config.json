@@ -1,11 +1,11 @@
 {
-	"BOT_OWNER_ID": "220553711196438528",
-	"BOT_TOKEN": "NDI5NDIxOTQ3ODk4ODIyNjU2.XkiLOg.ap-WkRI_LenPrqd5GJBizyrRopw",
+	"BOT_OWNER_ID": "",
+	"BOT_TOKEN": "",
 	"BOT_PREFIX": "&",
-  "CLIENT_ID": "429421947898822656",
-	"CLIENT_SECRET": "lII-EWWXfRmTvqghr8ojhkFkxBU21K0z",
-	"WEBSITE_URL": "https://colonia.glitch.me",
-  "GOOGLE_API_KEY": "AIzaSyAUkUubMw9sB-ABXHsQexwAhTXKb59iMxE",
+  "CLIENT_ID": "",
+	"CLIENT_SECRET": "",
+	"WEBSITE_URL": "https://example.com",
+  "GOOGLE_API_KEY": "",
   "DB_FILE": ".data/sqlite.db",
   "maintenance": false,
   "maintenance_reason": "En maintenance."
