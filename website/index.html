@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Colonia - Grâce</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+    {{ vendor_bootstrap_css }}
+    {{ style_css }}
+    {{ meteo_css }}
+    {{ music_player_css }}
+  </style>
+
+</head>
+
+<body>
+
+  {{ music_player_html }}  
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div id="lockModal" style="display:none">0</div>
+    
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal_title"></h2>
+      </div>
+      <div class="modal-body">
+        <p id="modal_message"></p>
+      </div>
+    </div>
+  </div>
+
+  {{ nav_bar }}
+
+  <!-- Header -->
+  <header class="py-5 mb-5" style="           
+    display:table;
+    width:100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://nickbarone3d.weebly.com/uploads/1/2/3/4/12344323/8887796_orig.png');
+    background-position:center center;
+  ">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h1 class="display-4 text-white mt-5 mb-2">Bienvenue sur l'interface de Grâce !</h1>
+          <p class="lead mb-5 text-white">De celle-ci, vous pourrez gérer votre personnage, accéder aux informations du lore afin de créer votre propre personnage !
+          Nous vous souhaitons un agréable voyage en notre compagnie.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="music_playing_not_in_channel" style="display:none">
+        <div class="alert alert-primary">
+          La musique <span id="music_title"></span> est en train d'être jouée par Grâce. Pensez à nous rejoindre !
+        </div>  
+      </div>
+      <div class="col-md-12" id="connection_lost" style="display:none">
+        <div class="alert alert-danger">
+          La connexion au serveur a été perdue. Si la connexion n'est pas rétablie, vos données ne seront pas enregistrées.
+        </div>  
+      </div>
+    </div>
+
+    <div class="row">      
+      <div class="col-md-8 mb-5">
+        <h2 id="display_message_title" class="text-center">Connexion en cours...</h2>
+        <hr>
+        <p id="display_message_text"></p>
+        <br>
+        <div id="player_recap" style="display:none">          
+          <h3>Vos rôles</h3>
+          <p id="player_roles"></p>
+          
+          <h3>Vos personnages</h3>
+          <p id="characters"></p>
+          
+          <div id="user_connections_div" style="display:none">
+            <h3>Les connexions</h3>
+            <p id="user_connections"></p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a id="join_discord_colonia_button" class="btn btn-primary" href="https://discord.gg/59szQvv" target="_blank" style="display:none">Rejoindre Colonia &raquo;</a>
+          <a id="login_discord_button" class="btn btn-primary" href="/api/discord/login" style="display:none">Se connecter à Discord &raquo;</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h2>Météo du jour</h2>
+        <hr>
+        {{ meteo_html }}
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row" id="characters_list">
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; TERIIHOANIA Joan Heimanu - 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script>
+    {{ vendor_jquery_js }}
+  </script>
+
+  <script>
+    {{ vendor_bootstrap_js }}
+  </script>
+ 
+ {{ loader_animation }}
+  
+  <!-- Socket -->
+  <script src="socket.io/socket.io.js"></script>
+  
+  <!-- Notif -->
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  
+  <!-- Weather -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+  <script src="https://codepen.io/steveg3003/pen/zBVakw"></script>
+  
+  <script>
+    {{ meteo_js }}
+  </script>
+  
+  <script>
+    {{ index_js }}
+  </script>
+
+</body>
+
+</html>
