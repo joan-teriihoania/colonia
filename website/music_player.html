@@ -1,0 +1,25 @@
+<div id="music_player_div" class="player text-center" style="display:none">
+  <div id="in_channel" style="display:none">0</div>
+  <div class="head">
+    <div class="back" id="music_player_image"></div>
+    <div class="front">
+      <div class="avatar"><img id="music_player_author_img" src="{{ client_avatar }}"/></div>
+      <div class="infos">
+        <div class="titulo_song" id="music_player_title"></div>
+        <div class="titulo_song" style="font-size:smaller;" id="music_player_author_title"></div>
+        <div class="titulo_song" style="font-size:smaller;" id="music_player_title_next"></div>
+        <!--<div class="tags"><span></span></div>-->
+      </div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="controllers active">
+      <!--<div class="back"><i class="fa fa-backward"></i></div>-->
+      <div class="back"><a class="fa fa-youtube-play" target="_blank" href="javascript:void(0)" id="music_player_link" style="color:red;text-decoration:none;"></a></div>
+      <div class="back"><i onclick="add_music()" class="fa fa-plus"></i></div>
+      <div class="play" id="music_play" style="background-color:#fff;" onclick="music_play()"><i class="fa fa-play-circle"></i></div>
+      <div class="forward" id="music_next" onclick="music_next()"><i class="fa fa-forward"></i></div>
+    </div>
+  </div>
+</div>
+<div class="rotation"></div>

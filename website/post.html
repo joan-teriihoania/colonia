@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Colonia - Grâce</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+    {{ vendor_bootstrap_css }}
+    {{ style_css }}
+    {{ music_player_css }}
+    {{ meteo_css }}
+  </style>
+
+</head>
+
+<body>
+
+  {{ music_player_html }}  
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div id="lockModal" style="display:none">0</div>
+    
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal_title"></h2>
+      </div>
+      <div class="modal-body">
+        <p id="modal_message"></p>
+      </div>
+    </div>
+  </div>
+
+  {{ nav_bar }}
+
+  <!-- Page Content -->
+  <div class="container">    
+    <div class="row">
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+        
+        <div class="alert alert-primary mt-4" id="music_playing_not_in_channel" style="display:none">
+          La musique <span id="music_title"></span> est en train d'être jouée par Grâce. Pensez à nous rejoindre !
+        </div>  
+        <div class="alert alert-danger mt-4" id="connection_lost" style="display:none">
+          La connexion au serveur a été perdue. Si la connexion n'est pas rétablie, vos données ne seront pas enregistrées.
+        </div>
+
+        <!-- Title -->
+        <h1 class="mt-4">{{ character_name }} {{ character_surname }}</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          par
+          <a href="javascript:void(0)">{{ author_username }}</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>{{ character_grade }} (niveau {{ character_accreditationLevel }}) - {{ character_sexe }} ({{ character_sexualOrientation }}) - {{ character_age }} ans - {{ character_height }}m - {{ character_weight }}kg
+        </p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <div style="background-size:cover;background-position:top center;background-image: url('{{ character_image }}');width:100%;overflow:hidden;min-height:400px;"></div>
+
+        <hr>
+
+        <!-- Post Content -->
+        <h2 class="mt-4">Qui suis-je ?</h2>
+        <hr>
+        <p class="lead">{{ character_descMentale }}</p>
+        
+        <h3 class="mt-4">Qualité</h3>
+        <p>{{ character_quality }}</p>
+        <h3 class="mt-4">Défauts</h3>
+        <p>{{ character_defect }}</p>
+
+        <h2 class="mt-4">Comment suis-je ?</h2>
+        <hr>
+        <p>{{ character_descPhysique }}</p>
+
+        <h2 class="mt-4">Qui fus-je ?</h2>
+        <hr>
+        <p>{{ character_histoire }}</p>
+
+        <hr>
+        <blockquote class="blockquote">
+          <p class="mb-0">{{ citation_text }}</p>
+          <footer class="blockquote-footer">{{ citation_author }}
+            <cite title="Source Title"></cite>
+          </footer>
+        </blockquote>
+        
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Categories</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">Web Design</a>
+                  </li>
+                  <li>
+                    <a href="#">HTML</a>
+                  </li>
+                  <li>
+                    <a href="#">Freebies</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">JavaScript</a>
+                  </li>
+                  <li>
+                    <a href="#">CSS</a>
+                  </li>
+                  <li>
+                    <a href="#">Tutorials</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Widget -->
+        <div class="card my-2">
+          <h5 class="card-header">Météo du jour</h5>
+            {{ meteo_html }}
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; TERIIHOANIA Joan Heimanu - 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script>
+    {{ vendor_jquery_js }}
+  </script>
+
+  <script>
+    {{ vendor_bootstrap_js }}
+  </script>
+ 
+ {{ loader_animation }}
+  
+  <!-- Socket -->
+  <script src="socket.io/socket.io.js"></script>
+  
+  <!-- Notif -->
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  
+  <!-- Weather -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+  <script src="https://codepen.io/steveg3003/pen/zBVakw"></script>
+    
+  <script>
+    {{ index_js }}
+  </script>
+    
+  <script>
+    {{ meteo_js }}
+  </script>
+
+</body>
+
+</html>
