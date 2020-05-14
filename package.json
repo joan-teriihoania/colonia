@@ -1,7 +1,7 @@
 {
-  "name": "Dashboard.io",
+  "name": "Colonia",
   "version": "0.0.1",
-  "description": "Bot et dashboard créé par Sworder",
+  "description": "Bot et dashboard inspiré du travail de Sworder modifié par Arcadia_sama",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
