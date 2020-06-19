@@ -1,6 +1,6 @@
 # Colonia : Grâce RP
 
-Bot créé pour le serveur Fortis Enterprise : COLONIA
+Bot créé pour le serveur Fortis Enterprise : COLONIA en 2019
 
 Bot et dashboard inspiré du travail de Sworder modifié par Arcadia_sama.
 
